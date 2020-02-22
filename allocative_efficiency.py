@@ -18,19 +18,8 @@ fig1, ax1 = plt.subplots(num=1)
 pizzas_prod =   [0,  1,  2,  3, 4, 5]
 colas_prod =    [15, 14, 12, 9, 5, 0]
 
-# define the x and y lists for the PPF
-ppf_x = []
-ppf_y = []
-                 
-# find the points on the PPF
-for c in pizzas_prod :
-    pt_x = pizzas_prod[c]
-    pt_y = colas_prod[c]
-    ppf_x.append(pt_x)
-    ppf_y.append(pt_y)
-
 # plot the PPF points
-ax1.plot(ppf_x,ppf_y, 'bo')
+ax1.plot(pizzas_prod,colas_prod, 'bo')
     
 # plot the PPF line using the values from each list
 ax1.plot(pizzas_prod, colas_prod,c='b')    
@@ -40,8 +29,8 @@ ax1.plot(pizzas_prod, colas_prod,c='b')
 plt.xlim(0,pizzas_prod[-1]+1)
 plt.ylim(0,colas_prod[0]+1)
 # use only the values in the points as the ticks
-plt.xticks(ppf_x)
-plt.yticks(ppf_y)
+plt.xticks(pizzas_prod)
+plt.yticks(colas_prod)
 
 # fill in the area below the PPF to contrast efficient vs. inefficient
 ax1.fill_between(pizzas_prod, colas_prod, color='#539ecd')
@@ -81,8 +70,8 @@ ax2.plot(mc_x,mc_y)
 #print("MC X values:",mc_x,'\nMC Y values: '+str(mc_y))
 
 # define the points for the MB
-mb_x =  [.5, 1.5, 2.5, 3.5, 4.5] # pizzas
-mb_y =  [5,  4,   3,   2,   1] # colas per pizza
+mb_x =  [.5, 1.5, 2.5, 3.5, 4.5] # for this many pizzas...
+mb_y =  [5,  4,   3,   2,   1] # people are willing to pay _ colas per pizza
 
 # format the graph with labels and a title
 plt.title('Allocative Efficiency (MB = MC)')
